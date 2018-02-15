@@ -102,6 +102,15 @@ BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 
 BOARD_SEPOLICY_DIRS += device/htc/t6-common/sepolicy
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/hw/camera.vendor.msm8960.so|libcamera_shim.so \
+    /system/vendor/lib/libqc-opt.so|libqc-opt_shim.so \
+    /system/lib/liblog.so|liblog_shim.so \
+    /system/lib/libvcsfp.so|libvcsfp_shim.so \
+    /system/vendor/lib/libril.so|libshim_ril.so \
+    /system/vendor/lib/libril-qc-qmi-1.so|libshim_ril.so
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
