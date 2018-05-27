@@ -32,6 +32,26 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE := liblog_shim
 LOCAL_MODULE_TAGS := optional
+<<<<<<< HEAD
+=======
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    vcsfp_shim.cpp
+
+LOCAL_MODULE := libvcsfp_shim
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := ril_shim.cpp
+LOCAL_MODULE := libshim_ril
+>>>>>>> da79568... t6-common: We shall add all thing for Fingerprint
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
