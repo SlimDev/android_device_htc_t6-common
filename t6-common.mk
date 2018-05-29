@@ -46,7 +46,9 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_amplifier.msm8960
+    audio_amplifier.msm8960 \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_effects.conf:system/vendor/etc/audio_effects.conf \
@@ -54,14 +56,25 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml
 
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl \
+    libbt-vendor
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8960 \
     Snap \
     libcamera_shim
 
-# Charger
-WITH_CM_CHARGER := false
+# Camera HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@1.0-impl
+
+# Consumerir HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl
 
 # Gello
 PRODUCT_PACKAGES += \
@@ -86,6 +99,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/projector-Keypad.kl:system/usr/keylayout/projector-Keypad.kl \
     $(LOCAL_PATH)/keylayout/max1187x_touchscreen_0.kl:system/usr/keylayout/max1187x_touchscreen_0.kl
 
+# Keymaster HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8960
@@ -97,6 +114,10 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
+
+# NFC HAL
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.0-impl
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -134,9 +155,23 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# Sensors HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
+    sensors.msm8960
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf
+
+# USB HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+
+# Vibrator HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
 
 # Voice processing
 PRODUCT_PACKAGES += \
@@ -146,6 +181,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libwcnss_qmi \
     wcnss_service
+
+# WiFi HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
