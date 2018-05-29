@@ -165,6 +165,11 @@ PRODUCT_PACKAGES += \
     init.target.sh \
     ueventd.qcom.rc
 
+# Seccomp policy
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
+    $(LOCAL_PATH)/seccomp_policy/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
+
 # Sensors HIDL interfaces
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
