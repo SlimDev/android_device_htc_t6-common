@@ -30,7 +30,7 @@
 #define LOG_NDDEBUG 0
 #define LOG_TAG "LocSvc_eng"
 
-#include "hardware/gps.h"
+#include "gps.h"
 #include "loc_log.h"
 #include "loc_eng_log.h"
 #include "loc_eng_msg_id.h"
@@ -107,8 +107,7 @@ static loc_name_val_s_type loc_eng_msgs[] =
     NAME_VAL( ULP_MSG_REQUEST_COARSE_POSITION ),
 #endif
     NAME_VAL( LOC_ENG_MSG_LPP_CONFIG ),
-    NAME_VAL( LOC_ENG_MSG_A_GLONASS_PROTOCOL ),
-    NAME_VAL( LOC_ENG_MSG_PRIVACY )
+    NAME_VAL( LOC_ENG_MSG_A_GLONASS_PROTOCOL )
 };
 static int loc_eng_msgs_num = sizeof(loc_eng_msgs) / sizeof(loc_name_val_s_type);
 
