@@ -22,6 +22,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false \
     ro.opengles.version=196608 \
     ro.sf.lcd_density=400
 
@@ -48,10 +49,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.baseband.arch=mdm \
     ro.telephony.ril_class=HTCQualcommRIL
-
-# Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=bfq
 
 # Time services
 PRODUCT_PROPERTY_OVERRIDES += \

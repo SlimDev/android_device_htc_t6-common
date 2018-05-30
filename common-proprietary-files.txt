@@ -146,6 +146,17 @@ lib/libwriteback.so
 etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 
+# Fingerprint
+bin/vcsFPService
+bin/vcsFirmwareVersion
+bin/vcsSimpleCapture
+bin/vcsSimpleEnrollMatch
+lib/libvcsCfgData.so
+lib/libvcsFPClient.so
+lib/libvcsfp.so
+vendor/lib/libfpsvc.so
+validity/ValidityPersistentData
+
 # GPS
 lib/libgeofence.so
 lib/libloc_api_v02.so
@@ -167,6 +178,9 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
+
+# STLport
+vendor/lib/libstlport.so
 
 # Graphics firmware
 etc/firmware/a300_pfp.fw
@@ -193,6 +207,11 @@ vendor/firmware/keymaster/keymaster.mdt
 # Media
 lib/libI420colorconvert.so
 lib/libmm-color-convertor.so
+vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxWmaDec.so
 
 # Modem firmware
 etc/firmware/hcheck.b00
@@ -219,13 +238,9 @@ lib/libmpl_jni.so
 # Widevine
 bin/qseecomd
 lib/libdrmdecrypt.so
-vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib/libwvdrm_L1.so
-vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L1.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # Widevine firmware
