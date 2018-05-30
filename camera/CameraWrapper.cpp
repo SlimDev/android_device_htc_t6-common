@@ -21,7 +21,8 @@
 *
 */
 
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
+#define LOG_PARAMETERS
 
 #define LOG_TAG "CameraWrapper"
 #include <cutils/log.h>
@@ -309,7 +310,7 @@ void camera_data_cb_timestamp(nsecs_t timestamp, int32_t msg_type,
 }
 
 camera_memory_t* camera_get_memory(int fd, size_t buf_size,
-        uint_t num_bufs, void *user) {
+       uint_t num_bufs, void *user) {
     return gUserGetMemory(fd, buf_size, num_bufs, gUserCameraDevice);
 }
 
