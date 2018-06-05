@@ -32,11 +32,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml \
     $(LOCAL_PATH)/configs/res_ctrl.conf:system/etc/res_ctrl.conf
 
-# Seccomp policy
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
-    $(LOCAL_PATH)/seccomp_policy/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
-
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
@@ -143,10 +138,6 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
-
-# OMX properties
- PRODUCT_PROPERTY_OVERRIDES += \
-    persist.media.treble_omx=false
 
 # Perf
 PRODUCT_PACKAGES += \
